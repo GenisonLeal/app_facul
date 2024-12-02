@@ -36,7 +36,7 @@ abstract class _ContactFormBack with Store{
     try{
       _service.validateName(name!);  // Chama o serviço para validar o nome
       _nameIsValid = true;
-      return null;  // Se o nome for válido, retorna null (sem erro)
+      return null; 
     }catch(e){
       _nameIsValid = false;
       return e.toString();  // Retorna a mensagem de erro se ocorrer uma exceção

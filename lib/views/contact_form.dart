@@ -120,7 +120,10 @@ class ContactForm extends StatelessWidget {
     var back = ContactFormBack(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cadastro de Contato'),
+        title: const Text(
+          'Cadastro de Contato',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: const Color(0xFF3A9E9F),
       ),
       body: Padding(

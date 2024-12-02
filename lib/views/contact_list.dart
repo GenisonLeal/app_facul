@@ -33,7 +33,7 @@ class ContactList extends StatelessWidget {
               context: context,
               builder: (context) => AlertDialog(
                     title: const Text('Excluir'),
-                    content: const Text('Confirma a Exclusão?'),
+                    content: const Text('Confirma a exclusão?'),
                     actions: [
                       TextButton(
                         child: const Text('Não'),
@@ -98,7 +98,10 @@ class ContactList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Lista de Contatos',style: TextStyle(fontWeight: FontWeight.w600)),
+          title: const Text(
+            'Lista de Contatos',
+            style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white)
+            ),
           backgroundColor: const Color(0xFF3A9E9F),
           elevation: 4.0, // Adiciona uma leve sombra à AppBar
           actions: [
