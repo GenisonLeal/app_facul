@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_null_comparison
-
 import 'package:app_facul/domain/entities/contact.dart';
 import 'package:app_facul/domain/exception/domain_layer_exception.dart';
 import 'package:app_facul/domain/interfaces/contact_dao.dart';
