@@ -1,16 +1,26 @@
-# app_facul
+# Gerenciador de Contatos 📱
 
-A new Flutter project.
+App Flutter para gerenciar contatos com persistência no SQLite. Adicione, edite, exclua e visualize contatos de forma simples e rápida! ✨
 
-## Getting Started
+## Funcionalidades 🚀
 
-This project is a starting point for a Flutter application.
+- **Listar contatos**: Veja todos os contatos cadastrados. 📝
+- **Adicionar novo contato**: Insira nome, telefone, e-mail e foto. ➕
+- **Editar contatos**: Modifique as informações de qualquer contato. ✏️
+- **Excluir contatos**: Remova contatos da lista. 🗑️
+- **Validação**: Garante que os dados são inseridos corretamente. ✅
+- **Armazenamento local**: Dados salvos no banco de dados SQLite. 💾
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologias Utilizadas 🛠️
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: Framework para criar apps móveis. 📱
+- **SQLite**: Banco de dados local para persistência. 🗃️
+- **MobX**: Gerenciamento de estado reativo. 🔄
+- **GetIt**: Injeção de dependências. 🔌
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Contribuir 🤝
+
+1. Faça um fork deste repositório.
+2. Crie uma branch para suas alterações.
+3. Realize as mudanças e faça o commit.
+4. Abra um Pull Request explicando as alterações.
