@@ -18,7 +18,7 @@ abstract class _ContactFormBack with Store{
   @action
   bool get isValid => _nameIsValid && _emailIsValid && _phoneIsValid;
   
-  // diferenciar novo com alteração 
+  // Identifica se é um novo contato ou alteração.
   _ContactFormBack(BuildContext context){
     var parameter = ModalRoute.of(context)!.settings.arguments;
     contact = (parameter == null) 
@@ -26,7 +26,7 @@ abstract class _ContactFormBack with Store{
     : parameter as Contact;
   }
 
-  //salvar 
+   // Salvar o contato. 
   save() async {
     await _service.save(contact);
   }

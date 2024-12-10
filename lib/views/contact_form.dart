@@ -7,12 +7,13 @@ class ContactForm extends StatelessWidget {
 
   ContactForm({super.key});
 
+  // Campo para o nome do contato
   Widget fieldName(ContactFormBack back) {
     return Padding(
       padding:
           const EdgeInsets.only(bottom: 16.0), // Espaçamento entre os campos
       child: TextFormField(
-        validator: back.validateName, // Passa a função de validação diretamente
+        validator: back.validateName, // Validação do nome
         onSaved: (newValue) {
           // Atribui o valor de 'newValue' ao 'back.contact.nome', mas de forma segura
           if (newValue != null) {
@@ -30,13 +31,14 @@ class ContactForm extends StatelessWidget {
     );
   }
 
+  // Campo para o e-mail do contato
   Widget fieldEmail(ContactFormBack back) {
     return Padding(
       padding:
           const EdgeInsets.only(bottom: 16.0), // Espaçamento entre os campos
     child: TextFormField(
         validator:
-            back.validateEmail, // Passa a função de validação diretamente
+            back.validateEmail, // Validação do e-mail
         onSaved: (newValue) => back.contact.email =
             newValue!, // Atribui o valor de 'newValue' ao 'back.contact.nome', mas de forma segura
         initialValue:
@@ -50,16 +52,17 @@ class ContactForm extends StatelessWidget {
     );
   }
 
+  // Campo para o telefone do contato com máscara
   Widget fieldPhone(ContactFormBack back) {
     var mask = MaskTextInputFormatter(mask: '(##) # ####-####');
     return Padding(
       padding:
           const EdgeInsets.only(bottom: 16.0), // Espaçamento entre os campos
     child: TextFormField(
-        validator: back.validatePhone,
+        validator: back.validatePhone, // Validação do telefone
         onSaved: (newValue) => back.contact.telefone = newValue!,
         initialValue: back.contact.telefone,
-        inputFormatters: [mask],
+        inputFormatters: [mask], // Aplica a máscara ao campo
         keyboardType: TextInputType.number,
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -70,6 +73,7 @@ class ContactForm extends StatelessWidget {
     );
   }
 
+  // Campo para o URL da imagem do contato
   Widget fieldURLImage(ContactFormBack back) {
     return Padding(
       padding:
@@ -86,7 +90,7 @@ class ContactForm extends StatelessWidget {
     );
   }
   
-  // Função para estilizar o botão de "Salvar"
+  // Botão para salvar o contato
   Widget saveButton(BuildContext context, ContactFormBack back) {
     return Padding(
       padding: const EdgeInsets.only(top: 16.0),
@@ -96,7 +100,7 @@ class ContactForm extends StatelessWidget {
           _form.currentState!.save();
           if (back.isValid) {
             back.save();
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(); // Fecha a tela de cadastro
           }
         },
         style: ElevatedButton.styleFrom(
@@ -137,7 +141,7 @@ class ContactForm extends StatelessWidget {
               fieldEmail(back),
               fieldPhone(back),
               fieldURLImage(back),
-              saveButton(context, back), // Botão de salvar
+              saveButton(context, back), // Exibe o botão de salvar
             ],
           ),
         ),

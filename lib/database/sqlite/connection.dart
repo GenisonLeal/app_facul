@@ -9,12 +9,12 @@ class Connection {
   static Future<Database?> get() async {
     // ignore: unnecessary_null_comparison
     if (_db == null) {
-      var path = join(await getDatabasesPath(), 'banco_contatos');
-      //deleteDatabase(path);
+      var path = join(await getDatabasesPath(), 'banco_contatos'); // Define o caminho do banco de dados.
       _db = await openDatabase(
         path,
         version: 1, 
         onCreate: (db, v){
+          // Executa os scripts de criação e inserção inicial.
           db.execute(createTable);
           db.execute(insert1);
           db.execute(insert2);
@@ -23,6 +23,6 @@ class Connection {
         );
       
     }
-    return _db;
+    return _db; // Retorna a instância do banco de dados.
   }
 }

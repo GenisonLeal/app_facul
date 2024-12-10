@@ -6,7 +6,8 @@ const createTable = '''
     ,email VARCHAR(150) NOT NULL
     ,url_avatar VARCHAR(300) NOT NULL 
   )
-''';
+'''; // Criação da tabela `contact` com colunas para ID, nome, telefone, email e URL do avatar.
+
 
 const insert1 = '''
 INSERT INTO contact (nome, telefone, email, url_avatar)

@@ -11,5 +11,5 @@ class Contact {
     required this.telefone,
     required this.email,
     required this.urlAvatar,
-  });
+  }); // Construtor com parâmetros obrigatórios, exceto o ID.
 }

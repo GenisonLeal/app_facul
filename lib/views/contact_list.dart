@@ -6,16 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class ContactList extends StatelessWidget {
-  final _back = ContactListBack();
+  final _back = ContactListBack(); // Instância do controlador da lista de contatos
 
   ContactList({super.key});
-
+  
+  // Função que retorna o CircleAvatar com a imagem do contato, ou ícone padrão
   CircleAvatar circleAvatar(String url) {
     return (Uri.tryParse(url)!.isAbsolute)
         ? CircleAvatar(backgroundImage: NetworkImage(url))
         : const CircleAvatar(child: Icon(Icons.person));
   }
 
+  // Ícone para editar o contato
   Widget iconEditButton(VoidCallback onPressed) {
     return IconButton(
       icon: const Icon(Icons.edit),
@@ -24,6 +26,7 @@ class ContactList extends StatelessWidget {
     );
   }
 
+  // Ícone para remover o contato com confirmação de exclusão
   Widget iconRemoveButton(BuildContext context, Function remove) {
     return IconButton(
         icon: const Icon(Icons.delete),
@@ -108,7 +111,7 @@ class ContactList extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
             child: ElevatedButton(onPressed: () {
-                _back.goToForm(context);
+                _back.goToForm(context); // Navega para o formulário de contato
               },
               style: ElevatedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 255, 255, 255), backgroundColor: Color.fromARGB(255, 255, 255, 255), // Cor do ícone do botão

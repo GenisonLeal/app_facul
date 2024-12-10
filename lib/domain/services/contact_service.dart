@@ -5,18 +5,18 @@ import 'package:get_it/get_it.dart';
 
 class ContactService{
  final _dao = GetIt.I.get<ContactDAO>();
-// tem que salvar um contato, ter a possibilidade de alterar e excluir e listar todos os contatos
+ // Salva ou atualiza um contato após validações.
 save(Contact contact){
   validateName(contact.nome);
   validateEmail(contact.email);
   validatePhone(contact.telefone);
   _dao.save(contact);
 }
-
+// Remove um contato pelo ID.
 remove(int id){
   _dao.remove(id);
 }
-
+// Retorna a lista de contatos.
 Future<List<Contact>> find(){
   return _dao.find();
 }
